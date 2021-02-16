@@ -1,0 +1,11 @@
+SSH Vagrant:
+ssh -l vagrant -i .vagrant/machines/wordpress/virtualbox/private_key 172.17.177.40
+
+Executar comando via ansible:
+$ ansible -u vagrant --private-key .vagrant/machines/wordpress/virtualbox/private_key -i hosts -m shell -a 'echo Hello, World'
+
+Com playbook:
+$ ansible-playbook provisioning.yml -u vagrant -i hosts --private-key .vagrant/machines/wordpress/virtualbox/private_key 
+
+Com playbook, dados de auth nos hosts
+ansible-playbook provisioning.yml -i hosts
